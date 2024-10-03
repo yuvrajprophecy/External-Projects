@@ -8,11 +8,12 @@
       "editableConfig" : false,
       "plibVersion" : {
         "mavenVersion" : "8.3.0-SNAPSHOT",
-        "pyPiVersion" : "1.9.16"
+        "pyPiVersion" : "1.9.18"
       }
     },
     "id" : "1",
     "uri" : "pipelines/report_top_customers",
+    "sourceSuggestions" : [ ],
     "language" : "python",
     "fabricId" : "1",
     "frontEndLanguage" : "sql",
@@ -75,53 +76,13 @@
     "configurationVersion" : "v2"
   },
   "connections" : [ {
-    "id" : "939",
+    "id" : "hW1OqF6Wfg42fo9qNXurv$$wV1IYephQq1QeZ1b-GBt4",
     "source" : "Source_77973",
     "sourcePort" : "64023",
-    "target" : "OrderBy_7525",
-    "targetPort" : "6489"
-  }, {
-    "id" : "478",
-    "source" : "OrderBy_7525",
-    "sourcePort" : "8295",
-    "target" : "Limit_20489",
-    "targetPort" : "94929"
+    "target" : "GArS9oPk9RJDD7iE_LCZs$$o-M2M_viIRZ_gCN60fJh3",
+    "targetPort" : "k2kx5L_QWxyAyotBx8ni2$$kOTxrdDDHiMw-sDn3avHI"
   } ],
   "processes" : {
-    "Limit_20489" : {
-      "id" : "Limit_20489",
-      "component" : "Limit",
-      "metadata" : {
-        "label" : "top_10_records",
-        "slug" : "top_10_records",
-        "x" : 840,
-        "y" : 280,
-        "phase" : 0,
-        "cache" : false,
-        "detailedStats" : false,
-        "isImported" : false
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "94929",
-          "slug" : "in0"
-        } ],
-        "outputs" : [ {
-          "id" : "21008",
-          "slug" : "out"
-        } ],
-        "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false,
-        "autoUpdateOnRun" : false
-      },
-      "properties" : {
-        "limit" : "10"
-      },
-      "componentInfo" : {
-        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_42.git&subPath=&tag=0.2.29.dev1&projectSubscriptionProjectId=42&path=gems/Limit",
-        "projectName" : "ProphecySparkBasicsPython"
-      }
-    },
     "Source_77973" : {
       "id" : "Source_77973",
       "component" : "Source",
@@ -151,24 +112,24 @@
         "datasetId" : "datasets/customers_orders"
       }
     },
-    "OrderBy_7525" : {
-      "id" : "OrderBy_7525",
-      "component" : "OrderBy",
+    "GArS9oPk9RJDD7iE_LCZs$$o-M2M_viIRZ_gCN60fJh3" : {
+      "id" : "GArS9oPk9RJDD7iE_LCZs$$o-M2M_viIRZ_gCN60fJh3",
+      "component" : "CustomReformat",
       "metadata" : {
-        "label" : "By Total Amount",
-        "slug" : "By_Total_Amount",
-        "x" : 620,
+        "label" : "select_customer_orders",
+        "slug" : "select_customer_orders",
+        "x" : 560,
         "y" : 280,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
         "isImported" : false,
-        "comment" : "Organizes orders in ascending order by their IDs.",
+        "comment" : "Extracts key details about customer orders, including amounts and account duration.",
         "autoUpdateComment" : true
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "6489",
+          "id" : "k2kx5L_QWxyAyotBx8ni2$$kOTxrdDDHiMw-sDn3avHI",
           "slug" : "in0",
           "schema" : {
             "type" : "struct",
@@ -213,7 +174,7 @@
           "isStreaming" : false
         } ],
         "outputs" : [ {
-          "id" : "8295",
+          "id" : "IBABV49yq4l9L4ykI1pA4$$G5iIXb6mQeHIbcYI_Ps8K",
           "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
@@ -221,18 +182,47 @@
         "autoUpdateOnRun" : false
       },
       "properties" : {
-        "columnsSelector" : [ "6489##order_id" ],
-        "orders" : [ {
+        "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
+        "expressions" : [ {
+          "target" : "customer_id",
           "expression" : {
             "format" : "sql",
-            "expression" : "order_id"
+            "expression" : "customer_id"
           },
-          "sortType" : "asc"
-        } ]
+          "description" : "",
+          "_row_id" : "4783565510681664757"
+        }, {
+          "target" : "orders",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "orders"
+          },
+          "description" : "",
+          "_row_id" : "1888833949490742724"
+        }, {
+          "target" : "amounts",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "amounts"
+          },
+          "description" : "",
+          "_row_id" : "1854131099680055513"
+        }, {
+          "target" : "account_length_days",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "account_length_days"
+          },
+          "description" : "",
+          "_row_id" : "6233189388910699638"
+        } ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "k2kx5L_QWxyAyotBx8ni2$$kOTxrdDDHiMw-sDn3avHI##customer_id", "k2kx5L_QWxyAyotBx8ni2$$kOTxrdDDHiMw-sDn3avHI##account_length_days", "k2kx5L_QWxyAyotBx8ni2$$kOTxrdDDHiMw-sDn3avHI##orders", "k2kx5L_QWxyAyotBx8ni2$$kOTxrdDDHiMw-sDn3avHI##amounts" ]
       },
       "componentInfo" : {
-        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_42.git&subPath=&tag=0.2.29.dev1&projectSubscriptionProjectId=42&path=gems/OrderBy",
-        "projectName" : "ProphecySparkBasicsPython"
+        "gemId" : "gems/CustomReformat",
+        "projectName" : "HelloWorld_Python_Clone"
       }
     }
   },
@@ -242,38 +232,5 @@
     "selectedInputFields" : [ ],
     "isCustomOutputSchema" : false,
     "autoUpdateOnRun" : false
-  },
-  "diagnostics" : [ {
-    "property" : "$.workflow.processes.OrderBy_7525.properties.orders[0].expression.expression",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "No match found for column order_id",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
-    "property" : "$.workflow.processes.Limit_20489",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "One of the upstream gems is broken. Please, fix it first.",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  } ]
+  }
 }

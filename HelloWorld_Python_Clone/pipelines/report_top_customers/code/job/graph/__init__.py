@@ -1,3 +1,2 @@
-from .top_10_records import top_10_records
-from .By_Total_Amount import By_Total_Amount
+from .select_customer_orders import select_customer_orders
 from .Customer_Orders import Customer_Orders

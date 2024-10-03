@@ -8,8 +8,7 @@ from job.graph import *
 
 def pipeline(spark: SparkSession) -> None:
     df_Customer_Orders = Customer_Orders(spark)
-    df_By_Total_Amount = By_Total_Amount(spark, df_Customer_Orders)
-    df_top_10_records = top_10_records(spark, df_By_Total_Amount)
+    df_select_customer_orders = select_customer_orders(spark, df_Customer_Orders)
 
 def main():
     spark = SparkSession.builder\
