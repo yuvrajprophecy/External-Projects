@@ -1,0 +1,1 @@
+{"initCode":"","code":"@udf(returnType=StringType()) \ndef helllooooooo():\n    return \"helllooooooo\""}

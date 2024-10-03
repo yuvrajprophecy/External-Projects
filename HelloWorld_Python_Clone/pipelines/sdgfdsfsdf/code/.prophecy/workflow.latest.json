@@ -1,0 +1,549 @@
+{
+  "metainfo" : {
+    "migrationVersions" : {
+      "gemBuilderVersion" : "v1"
+    },
+    "functions" : { },
+    "codeGenConfiguration" : {
+      "editableConfig" : true,
+      "plibVersion" : {
+        "mavenVersion" : "8.3.0-SNAPSHOT",
+        "pyPiVersion" : "1.9.16"
+      },
+      "sparkConfigJinjaEnabled" : true
+    },
+    "id" : "1",
+    "uri" : "pipelines/sdgfdsfsdf",
+    "sourceSuggestions" : [ {
+      "sourceLabel" : "customer_totals",
+      "sourceDatasetId" : "datasets/customer_totals",
+      "canJoinWith" : [ {
+        "processLabel" : "customers",
+        "processId" : "SD7h3OXJCps3OWogyFyF9$$dXjcC_gmLmNh01fb-cBnE",
+        "joinColumns" : [ "customer_id" ],
+        "isRecommended" : true,
+        "properties" : {
+          "columnsSelector" : [ "customer_id" ],
+          "conditions" : [ {
+            "alias" : "customer_totals",
+            "expression" : "(customers.customer_id = customer_totals.customer_id)",
+            "joinType" : "inner"
+          } ],
+          "expressions" : [ {
+            "alias" : "full_name",
+            "expression" : "customer_totals.full_name"
+          }, {
+            "alias" : "amount",
+            "expression" : "customer_totals.amount"
+          }, {
+            "alias" : "phone",
+            "expression" : "customers.phone"
+          }, {
+            "alias" : "customer_id",
+            "expression" : "customers.customer_id"
+          }, {
+            "alias" : "country_code",
+            "expression" : "customers.country_code"
+          }, {
+            "alias" : "account_open_date",
+            "expression" : "customers.account_open_date"
+          }, {
+            "alias" : "account_flags",
+            "expression" : "customers.account_flags"
+          }, {
+            "alias" : "last_name",
+            "expression" : "customers.last_name"
+          }, {
+            "alias" : "email",
+            "expression" : "customers.email"
+          }, {
+            "alias" : "first_name",
+            "expression" : "customers.first_name"
+          } ],
+          "headAlias" : "datasets/customer_totals"
+        }
+      } ]
+    }, {
+      "sourceLabel" : "farmers_markets",
+      "sourceDatasetId" : "datasets/farmers-markets",
+      "canJoinWith" : [ {
+        "processLabel" : "customers",
+        "processId" : "SD7h3OXJCps3OWogyFyF9$$dXjcC_gmLmNh01fb-cBnE",
+        "joinColumns" : [ "country_code", "phone" ],
+        "isRecommended" : true,
+        "properties" : {
+          "columnsSelector" : [ "country_code", "phone" ],
+          "conditions" : [ {
+            "alias" : "farmers_markets",
+            "expression" : "((customers.country_code = farmers_markets.County) AND (customers.phone = farmers_markets.Honey))",
+            "joinType" : "inner"
+          } ],
+          "expressions" : [ {
+            "alias" : "FMID",
+            "expression" : "farmers_markets.FMID"
+          }, {
+            "alias" : "MarketName",
+            "expression" : "farmers_markets.MarketName"
+          }, {
+            "alias" : "Website",
+            "expression" : "farmers_markets.Website"
+          }, {
+            "alias" : "Facebook",
+            "expression" : "farmers_markets.Facebook"
+          }, {
+            "alias" : "Twitter",
+            "expression" : "farmers_markets.Twitter"
+          }, {
+            "alias" : "Youtube",
+            "expression" : "farmers_markets.Youtube"
+          }, {
+            "alias" : "OtherMedia",
+            "expression" : "farmers_markets.OtherMedia"
+          }, {
+            "alias" : "street",
+            "expression" : "farmers_markets.street"
+          }, {
+            "alias" : "city",
+            "expression" : "farmers_markets.city"
+          }, {
+            "alias" : "State",
+            "expression" : "farmers_markets.State"
+          }, {
+            "alias" : "zip",
+            "expression" : "farmers_markets.zip"
+          }, {
+            "alias" : "Season1Date",
+            "expression" : "farmers_markets.Season1Date"
+          }, {
+            "alias" : "Season1Time",
+            "expression" : "farmers_markets.Season1Time"
+          }, {
+            "alias" : "Season2Date",
+            "expression" : "farmers_markets.Season2Date"
+          }, {
+            "alias" : "Season2Time",
+            "expression" : "farmers_markets.Season2Time"
+          }, {
+            "alias" : "Season3Date",
+            "expression" : "farmers_markets.Season3Date"
+          }, {
+            "alias" : "Season3Time",
+            "expression" : "farmers_markets.Season3Time"
+          }, {
+            "alias" : "Season4Date",
+            "expression" : "farmers_markets.Season4Date"
+          }, {
+            "alias" : "Season4Time",
+            "expression" : "farmers_markets.Season4Time"
+          }, {
+            "alias" : "x",
+            "expression" : "farmers_markets.x"
+          }, {
+            "alias" : "y",
+            "expression" : "farmers_markets.y"
+          }, {
+            "alias" : "Location",
+            "expression" : "farmers_markets.Location"
+          }, {
+            "alias" : "Credit",
+            "expression" : "farmers_markets.Credit"
+          }, {
+            "alias" : "WIC",
+            "expression" : "farmers_markets.WIC"
+          }, {
+            "alias" : "WICcash",
+            "expression" : "farmers_markets.WICcash"
+          }, {
+            "alias" : "SFMNP",
+            "expression" : "farmers_markets.SFMNP"
+          }, {
+            "alias" : "SNAP",
+            "expression" : "farmers_markets.SNAP"
+          }, {
+            "alias" : "Organic",
+            "expression" : "farmers_markets.Organic"
+          }, {
+            "alias" : "Bakedgoods",
+            "expression" : "farmers_markets.Bakedgoods"
+          }, {
+            "alias" : "Cheese",
+            "expression" : "farmers_markets.Cheese"
+          }, {
+            "alias" : "Crafts",
+            "expression" : "farmers_markets.Crafts"
+          }, {
+            "alias" : "Flowers",
+            "expression" : "farmers_markets.Flowers"
+          }, {
+            "alias" : "Eggs",
+            "expression" : "farmers_markets.Eggs"
+          }, {
+            "alias" : "Seafood",
+            "expression" : "farmers_markets.Seafood"
+          }, {
+            "alias" : "Herbs",
+            "expression" : "farmers_markets.Herbs"
+          }, {
+            "alias" : "Vegetables",
+            "expression" : "farmers_markets.Vegetables"
+          }, {
+            "alias" : "Jams",
+            "expression" : "farmers_markets.Jams"
+          }, {
+            "alias" : "Maple",
+            "expression" : "farmers_markets.Maple"
+          }, {
+            "alias" : "Meat",
+            "expression" : "farmers_markets.Meat"
+          }, {
+            "alias" : "Nursery",
+            "expression" : "farmers_markets.Nursery"
+          }, {
+            "alias" : "Nuts",
+            "expression" : "farmers_markets.Nuts"
+          }, {
+            "alias" : "Plants",
+            "expression" : "farmers_markets.Plants"
+          }, {
+            "alias" : "Poultry",
+            "expression" : "farmers_markets.Poultry"
+          }, {
+            "alias" : "Prepared",
+            "expression" : "farmers_markets.Prepared"
+          }, {
+            "alias" : "Soap",
+            "expression" : "farmers_markets.Soap"
+          }, {
+            "alias" : "Trees",
+            "expression" : "farmers_markets.Trees"
+          }, {
+            "alias" : "Wine",
+            "expression" : "farmers_markets.Wine"
+          }, {
+            "alias" : "Coffee",
+            "expression" : "farmers_markets.Coffee"
+          }, {
+            "alias" : "Beans",
+            "expression" : "farmers_markets.Beans"
+          }, {
+            "alias" : "Fruits",
+            "expression" : "farmers_markets.Fruits"
+          }, {
+            "alias" : "Grains",
+            "expression" : "farmers_markets.Grains"
+          }, {
+            "alias" : "Juices",
+            "expression" : "farmers_markets.Juices"
+          }, {
+            "alias" : "Mushrooms",
+            "expression" : "farmers_markets.Mushrooms"
+          }, {
+            "alias" : "PetFood",
+            "expression" : "farmers_markets.PetFood"
+          }, {
+            "alias" : "Tofu",
+            "expression" : "farmers_markets.Tofu"
+          }, {
+            "alias" : "WildHarvested",
+            "expression" : "farmers_markets.WildHarvested"
+          }, {
+            "alias" : "updateTime",
+            "expression" : "farmers_markets.updateTime"
+          }, {
+            "alias" : "phone",
+            "expression" : "customers.phone"
+          }, {
+            "alias" : "customer_id",
+            "expression" : "customers.customer_id"
+          }, {
+            "alias" : "country_code",
+            "expression" : "customers.country_code"
+          }, {
+            "alias" : "account_open_date",
+            "expression" : "customers.account_open_date"
+          }, {
+            "alias" : "account_flags",
+            "expression" : "customers.account_flags"
+          }, {
+            "alias" : "last_name",
+            "expression" : "customers.last_name"
+          }, {
+            "alias" : "email",
+            "expression" : "customers.email"
+          }, {
+            "alias" : "first_name",
+            "expression" : "customers.first_name"
+          } ],
+          "headAlias" : "datasets/farmers-markets"
+        }
+      } ]
+    }, {
+      "sourceLabel" : "customers_orders",
+      "sourceDatasetId" : "datasets/customers_orders",
+      "canJoinWith" : [ {
+        "processLabel" : "customers",
+        "processId" : "SD7h3OXJCps3OWogyFyF9$$dXjcC_gmLmNh01fb-cBnE",
+        "joinColumns" : [ "customer_id" ],
+        "isRecommended" : true,
+        "properties" : {
+          "columnsSelector" : [ "customer_id" ],
+          "conditions" : [ {
+            "alias" : "customers_orders",
+            "expression" : "(customers.customer_id = customers_orders.customer_id)",
+            "joinType" : "inner"
+          } ],
+          "expressions" : [ {
+            "alias" : "orders",
+            "expression" : "customers_orders.orders"
+          }, {
+            "alias" : "amounts",
+            "expression" : "customers_orders.amounts"
+          }, {
+            "alias" : "account_length_days",
+            "expression" : "customers_orders.account_length_days"
+          }, {
+            "alias" : "phone",
+            "expression" : "customers.phone"
+          }, {
+            "alias" : "customer_id",
+            "expression" : "customers.customer_id"
+          }, {
+            "alias" : "country_code",
+            "expression" : "customers.country_code"
+          }, {
+            "alias" : "account_open_date",
+            "expression" : "customers.account_open_date"
+          }, {
+            "alias" : "account_flags",
+            "expression" : "customers.account_flags"
+          }, {
+            "alias" : "last_name",
+            "expression" : "customers.last_name"
+          }, {
+            "alias" : "email",
+            "expression" : "customers.email"
+          }, {
+            "alias" : "first_name",
+            "expression" : "customers.first_name"
+          } ],
+          "headAlias" : "datasets/customers_orders"
+        }
+      } ]
+    }, {
+      "sourceLabel" : "orders",
+      "sourceDatasetId" : "datasets/orders",
+      "canJoinWith" : [ {
+        "processLabel" : "customers",
+        "processId" : "SD7h3OXJCps3OWogyFyF9$$dXjcC_gmLmNh01fb-cBnE",
+        "joinColumns" : [ "customer_id" ],
+        "isRecommended" : true,
+        "properties" : {
+          "columnsSelector" : [ "customer_id" ],
+          "conditions" : [ {
+            "alias" : "orders",
+            "expression" : "(customers.customer_id = orders.customer_id)",
+            "joinType" : "inner"
+          } ],
+          "expressions" : [ {
+            "alias" : "order_id",
+            "expression" : "orders.order_id"
+          }, {
+            "alias" : "order_status",
+            "expression" : "orders.order_status"
+          }, {
+            "alias" : "order_category",
+            "expression" : "orders.order_category"
+          }, {
+            "alias" : "order_date",
+            "expression" : "orders.order_date"
+          }, {
+            "alias" : "amount",
+            "expression" : "orders.amount"
+          }, {
+            "alias" : "phone",
+            "expression" : "customers.phone"
+          }, {
+            "alias" : "customer_id",
+            "expression" : "customers.customer_id"
+          }, {
+            "alias" : "country_code",
+            "expression" : "customers.country_code"
+          }, {
+            "alias" : "account_open_date",
+            "expression" : "customers.account_open_date"
+          }, {
+            "alias" : "account_flags",
+            "expression" : "customers.account_flags"
+          }, {
+            "alias" : "last_name",
+            "expression" : "customers.last_name"
+          }, {
+            "alias" : "email",
+            "expression" : "customers.email"
+          }, {
+            "alias" : "first_name",
+            "expression" : "customers.first_name"
+          } ],
+          "headAlias" : "datasets/orders"
+        }
+      } ]
+    }, {
+      "sourceLabel" : "report",
+      "sourceDatasetId" : "datasets/report",
+      "canJoinWith" : [ {
+        "processLabel" : "customers",
+        "processId" : "SD7h3OXJCps3OWogyFyF9$$dXjcC_gmLmNh01fb-cBnE",
+        "joinColumns" : [ "customer_id" ],
+        "isRecommended" : true,
+        "properties" : {
+          "columnsSelector" : [ "customer_id" ],
+          "conditions" : [ {
+            "alias" : "report",
+            "expression" : "(customers.customer_id = report.customer_id)",
+            "joinType" : "inner"
+          } ],
+          "expressions" : [ {
+            "alias" : "orders",
+            "expression" : "report.orders"
+          }, {
+            "alias" : "amounts",
+            "expression" : "report.amounts"
+          }, {
+            "alias" : "account_length_days",
+            "expression" : "report.account_length_days"
+          }, {
+            "alias" : "phone",
+            "expression" : "customers.phone"
+          }, {
+            "alias" : "customer_id",
+            "expression" : "customers.customer_id"
+          }, {
+            "alias" : "country_code",
+            "expression" : "customers.country_code"
+          }, {
+            "alias" : "account_open_date",
+            "expression" : "customers.account_open_date"
+          }, {
+            "alias" : "account_flags",
+            "expression" : "customers.account_flags"
+          }, {
+            "alias" : "last_name",
+            "expression" : "customers.last_name"
+          }, {
+            "alias" : "email",
+            "expression" : "customers.email"
+          }, {
+            "alias" : "first_name",
+            "expression" : "customers.first_name"
+          } ],
+          "headAlias" : "datasets/report"
+        }
+      } ]
+    } ],
+    "pipelineSettingsInfo" : {
+      "applicationName" : "sdgfdsfsdf",
+      "hasApplication" : true,
+      "isFunctionsPackageDirDefined" : true
+    },
+    "language" : "python",
+    "fabricId" : "3568",
+    "frontEndLanguage" : "sql",
+    "mode" : "batch",
+    "udfs" : {
+      "language" : "python",
+      "udfs" : [ ],
+      "functionPackageName" : "abhishekse2etestsprophecyioteam.helloworld.functions",
+      "sharedFunctionPackageNames" : [ "prophecy.spark_basic.functions", "prophecy.webapp.functions", "prophecy.streaming.functions", "prophecy.warehouse.functions" ]
+    },
+    "udafs" : {
+      "language" : "python",
+      "code" : ""
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "default",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
+    },
+    "sparkConf" : [ ],
+    "hadoopConf" : [ ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "dependentProjectExternalDependencies" : [ {
+      "projectUID" : "42",
+      "projectName" : "ProphecySparkBasicsPython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "45",
+      "projectName" : "ProphecyWebAppPython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "44",
+      "projectName" : "ProphecyStreamingPython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "43",
+      "projectName" : "ProphecyWarehousePython",
+      "externalDependencies" : [ ]
+    } ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Disabled",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 1000
+    },
+    "topLevelPackage" : "sdgfdsfsdf",
+    "configurationVersion" : "v2"
+  },
+  "connections" : [ ],
+  "processes" : {
+    "SD7h3OXJCps3OWogyFyF9$$dXjcC_gmLmNh01fb-cBnE" : {
+      "id" : "SD7h3OXJCps3OWogyFyF9$$dXjcC_gmLmNh01fb-cBnE",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "customers",
+        "slug" : "customers",
+        "x" : -480,
+        "y" : -280,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "Loads customer data from a CSV file, providing essential information for customer management and analysis.",
+        "autoUpdateComment" : true
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "WCEe8_RO1KbI2pTfq3TsT$$n_Pb-7Ok2c0J9UslNpp4t",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/customers"
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false,
+    "autoUpdateOnRun" : false
+  }
+}
